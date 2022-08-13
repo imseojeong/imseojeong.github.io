@@ -2,9 +2,20 @@
   /* font */
   --font-main: 'PPFragment-SansLight';
 
+  /* value */
+  --gnb-height: 52px;
+  --padding-main: 20px;
+  --border-width: 1px;
+  --blur-value: 7px;
+
+  /* z-index */
+  --gnb-level: 10;
+  --gnb-nav-sidebar-level: 20;
+
   /* color */
   --background: #f6f6f6;
   --black: #222;
+  --background-global-header: #f6f6f6bb;
 }
 
 * {
@@ -55,4 +66,100 @@ ul,
 ol {
   padding-left: 0;
   list-style: none;
+}
+
+/* GNB */
+.gnb {
+  position: fixed;
+  z-index: var(--gnb-level);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--gnb-height);
+  background-color: var(--background-global-header);
+  border-bottom: var(--border-width) solid var(--black);
+  -webkit-backdrop-filter: blur(var(--blur-value));
+  backdrop-filter: blur(var(--blur-value));
+}
+
+.gnb-left,
+.gnb-right {
+  height: 100%;
+}
+
+.gnb-logo {
+  height: 100%;
+}
+
+.gnb-logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 var(--padding-main);
+  font-size: 24px;
+}
+
+.gnb-nav-menu-button,
+.gnb-nav-close-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-main);
+  font-size: 16px;
+}
+
+.gnb-nav-menu-button {
+  height: 100%;
+}
+
+.gnb-nav-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.gnb-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--gnb-nav-sidebar-level);
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  box-shadow: rgb(0 0 0 / 0.1) 0 4px 12px;
+  transition: all 300ms ease-in-out;
+  transform: translate3d(0, 0, 0);
+}
+
+.gnb-nav.is-hidden {
+  visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+}
+
+.gnb-nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.gnb-nav-item {
+  margin-bottom: 10px;
+}
+
+.gnb-nav-item:last-child {
+  margin-bottom: 0;
+}
+
+.gnb-nav-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-size: 28px;
 }
