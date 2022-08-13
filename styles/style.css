@@ -290,6 +290,36 @@ svg.scroll-down {
   .gnb-nav-item a:hover {
     transform: translate3d(1px, -1px, 0);
   }
+
+  /* Home */
+  #home {
+    position: relative;
+  }
+
+  .home-introduce .greeting {
+    margin-bottom: 60px;
+    font-size: 140px;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .home-introduce .position {
+    font-size: 30px;
+  }
+
+  .home-introduce .position br {
+    display: none;
+  }
+
+  /* Scroll down button */
+  .scroll-down-button {
+    position: absolute;
+    bottom: 30px;
+  }
+
+  .scroll-down-button:hover {
+    transform: scale(1.1);
+  }
 }
 
 /* >= 1200px (desktop) */
@@ -309,5 +339,20 @@ svg.scroll-down {
   .gnb-nav-item a {
     padding: 0 28px;
     font-size: 30px;
+  }
+
+  /* Home */
+  .home-introduce {
+    margin-bottom: 120px;
+  }
+
+  .home-introduce .greeting {
+    margin-bottom: 65px;
+    font-size: 221px;
+    line-height: 1.08;
+  }
+
+  .home-introduce .position {
+    font-size: 49px;
   }
 }
