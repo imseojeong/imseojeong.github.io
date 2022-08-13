@@ -1,0 +1,17 @@
+@font-face {
+  font-family: PPFragment-SansLight;
+  font-weight: 300;
+  src: url('../assets/fonts/PPFragment-SansLight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: PPFragment-SansRegular;
+  font-weight: 400;
+  src: url('../assets/fonts/PPFragment-SansRegular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: PPFragment-SansExtraBold;
+  font-weight: 800;
+  src: url('../assets/fonts/PPFragment-SansExtraBold.otf') format('opentype');
+}
