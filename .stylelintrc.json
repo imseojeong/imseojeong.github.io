@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "stylelint-config-recess-order",
-    "stylelint-config-standard"
-  ],
-
+  "extends": ["stylelint-config-recess-order", "stylelint-config-standard"],
 
   "rules": {
     "alpha-value-notation": "number",
@@ -136,6 +132,12 @@
       }
     ],
     "property-no-unknown": true,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": ["backdrop-filter"]
+      }
+    ],
     "rule-empty-line-before": [
       "always-multi-line",
       {
