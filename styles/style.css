@@ -16,6 +16,17 @@
   --background: #f6f6f6;
   --black: #222;
   --background-global-header: #f6f6f6bb;
+  --scroll-down-button: #ff69b433;
+}
+
+@keyframes rotating-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 * {
@@ -162,6 +173,77 @@ ol {
   justify-content: center;
   padding: 0 20px;
   font-size: 28px;
+}
+
+/* Main */
+main {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/* section */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: var(--padding-main);
+  padding-top: var(--gnb-height);
+  scroll-snap-align: start;
+}
+
+/* Home */
+.home-introduce {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.home-introduce .greeting,
+.home-introduce .position {
+  font-weight: 400;
+}
+
+.home-introduce .greeting {
+  margin-bottom: 30px;
+  font-size: min(55px, 16vw);
+  line-height: 1.2;
+}
+
+.home-introduce .position {
+  font-size: min(25px, 7vw);
+  text-align: center;
+}
+
+/* Scroll down button */
+.scroll-down-button {
+  position: relative;
+  display: block;
+  height: 100px;
+  background-color: var(--scroll-down-button);
+  border-radius: 50%;
+  transition: transform 300ms ease-in-out;
+}
+
+.scroll-down-button i.fa-arrow-down {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+svg.scroll-down {
+  width: 100px;
+  height: 100px;
+  letter-spacing: 0.2em;
+  animation: rotating-animation 10000ms linear infinite;
 }
 
 /* >= 768px (tablet) */
